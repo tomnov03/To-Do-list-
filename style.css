@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box; /* Permet de ne pas déborder de la taille de la fenêtre de s'ajuster automatiquement */
+}
+
+body {
+  margin: 0;
+  background-color: #ebebeb; 
+  font-family: 'Patrick Hand', cursive; 
+  color: #333; 
+}
+
+/* centre le contenu de la page */
+.container {
+  max-width: 600px; 
+  margin: 0 auto;   
+  padding: 20px; /* Espacement autour du contenu */
+}
+
+.header { 
+  background-color: #f7cf8e; 
+  border-radius: 10px;       
+  padding: 20px; 
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px; /* Espace en bas du header */
+}
+
+/* itre dans la zone header */
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Champ de saisie pour la nouvelle tache */
+#entreeUt { 
+  margin: 10px; 
+  border: 1px solid #ccc;   
+  border-radius: 5px;        
+  width: 60%;                
+  padding: 10px;
+  font-size: 16px;
+  outline: none;             /* Retire le contour bleu sur navig */
+  transition: border-color 0.2s; /* Effet visuel lors du focus */
+}
+
+/* Effet au focus sur le champ */
+#entreeUt:focus {
+  border-color: #49BEB7; 
+}
+
+/* Bouton d'ajout */
+.addBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #49BEB7;   
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; 
+  margin-left: 5px; 
+  border: none;
+  transition: background-color 0.3s;
+}
+
+/* Effet de survol sur le bouton d'ajout */
+.addBtn:hover {
+  background-color: #37948F; 
+}
+
+/* Conteneur de la liste des taches */
+ul#maListe {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0;
+  margin: 0;
+}
+
+/* Élément de la liste (li) */
+ul#maListe li { 
+  cursor: pointer;       /* Change le curseur en main */
+  position: relative;    /* Position pour la ok croix */
+  padding: 12px 28px;    
+  font-size: 18px; 
+  background: #ffffff; 
+  border-radius: 5px;    
+  margin-bottom: 10px;   /* Espace entre les taches */
+  line-height: 1.8;      /* Hauteur de ligne */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+  transition: background-color 0.2s;       /* Effet survol */
+  /* Rendre l'élément déplaçable */
+  cursor: move; 
+}
+
+/* Arrière plan au survol d'un li */
+ul#maListe li:hover {
+  background-color: #f2f2f2; 
+}
+
+/* Elément coché terminé */
+ul#maListe li.checked {
+  background: #72B5AB;  
+  color: #fff;          
+  text-decoration: line-through; /* barre le texte */
+}
+
+/* Coche visible pour les éléments cochés */
+ul#maListe li.checked::before { 
+  content: '';
+  position: absolute;
+  left: 10px; 
+  top: 50%; 
+  transform: translateY(-50%) rotate(45deg);
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  height: 10px;
+  width: 5px;
+}
+
+/* Bouton de suppression (croix) */
+.close {
+  position: absolute;
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Style de survol du bouton supprimer */
+.close:hover {
+  color: red; 
+}
+
+/* Bouton de modification stylo */
+.edit {
+  position: absolute;
+  right: 40px; 
+  top: 50%; 
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Survol bouton modifier */
+.edit:hover {
+  color: #49BEB7; 
+}
+
+/* Section "forme" Exemple 5 éléments */
+#forme {
+  margin-top: 40px;
+}
+
+/* Contenant interne pour l'exemple */
+#forme .placer {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre barre  */
+#forme .placer h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Liste d'exemple (cases) */
+.liste-exemple {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between; 
+}
+
+.dropzone {
+  background: #676767;
+  border-radius: 5px;
+  padding: 8px;
+  min-width: 50px;
+  min-height: 50px;
+  text-align: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  border: 2px dashed #49BEB7;
+  transition: border-color 0.2s;
+}
+
+/* effet survol déposer objet */
+.dropzone.dragover {
+  border-color: #37948F; 
+}

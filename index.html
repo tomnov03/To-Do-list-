@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>to-do list</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div id="monDIV" class="header">
+      <h2>ma to do list</h2> 
+      <input type="text" id="entreeUt" placeholder="titre de la tache...">
+      
+      <!-- appelle la fonction newelement en onclick -->
+      <span onclick="newelement()" class="addBtn" tabindex="0"> nouvelle tache </span>
+    </div>
+
+    <!-- change l'id du html pour qu'il corresponde a la variable du js -->
+    <ul id="maListe"></ul>
+
+    <!-- conteneur permettant de deposer les taches dans les cases -->
+    <div id="forme">
+      <div class="placer">
+        <h1>liste des favoris</h1>
+        <!-- chaque li est une dropzone, son texte sera remplace par la tache -->
+        <ul class="liste-exemple">
+          <li class="dropzone">favoris 1</li>
+          <li class="dropzone">favoris 2</li>
+          <li class="dropzone">favoris 3</li>
+          <li class="dropzone">favoris 4</li>
+          <li class="dropzone">favoris 5</li>
+        </ul>
+      </div>  
+    </div>
+   </div> 
+</body>
+</html>
